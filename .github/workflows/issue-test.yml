@@ -1,9 +1,10 @@
 name: test issues
 on:
-  issues:
-    types:
-      - reopened
-      - opened
+  workflow_dispatch
+#  issues:
+#    types:
+#      - reopened
+#      - opened
 
 jobs:
   test-issues-Actions:
