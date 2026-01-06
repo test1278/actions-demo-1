@@ -3,7 +3,7 @@ name: print-event
 
 on:
   issues:
-
+  issue_comment:
 
 jobs:
   print_context:
