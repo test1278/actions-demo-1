@@ -1,5 +1,7 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 on:
   pull_request:
   workflow_dispatch:
@@ -29,3 +31,5 @@ jobs:
           echo ${{ inputs.pr }}
           gh pr checkout ${{ inputs.pr }}
 #      - run: echo "${{ toJSON(github) }}"
+      - name: run shell
+        run: ./shell.sh
