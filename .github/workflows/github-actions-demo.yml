@@ -24,12 +24,12 @@ jobs:
 #      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
-          ls
+          ls && echo "----------"
           cat test.txt
       - name: Prepare tag (forks)
         run: |
           echo ${{ inputs.pr }}
           gh pr checkout ${{ inputs.pr }}
-#      - run: echo "${{ toJSON(github) }}"
+      - run: echo "${{ toJSON(github.event) }}"
       - name: run shell
         run: ./shell.sh
