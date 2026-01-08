@@ -1,7 +1,7 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on:
-  workflow_dispatch
+on: pull_request
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -15,5 +15,6 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
+          ls
           ls ${{ github.workspace }}
-      - run: echo "test 22  ${{ secrets.abc_token  }}."
+      - run: echo "${{ toJSON(github) }}"
