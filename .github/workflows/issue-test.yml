@@ -1,14 +1,16 @@
 name: test issues
+
+env:
+  GH_TOKEN: ${{ secrets.ABC_TOKEN }}
+
 on:
-  workflow_dispatch
-#  issues:
-#    types:
-#      - reopened
-#      - opened
+  issues:
 
 jobs:
   test-issues-Actions:
     runs-on: ubuntu-latest
     steps:
       - run: echo "test-issues-Actions 111"
+      - run: ./shell.sh
+
 
